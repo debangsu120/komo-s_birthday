@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Baa!</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(45deg, #6B46C1, #ED64A6, #F687B3, #FBB6CE);
+            background-size: 400% 400%;
+            animation: gradientBG 12s ease infinite;
+            color: #fff;
+            overflow-x: hidden;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+        }
+        
+        @keyframes gradientBG {
+            0% {background-position: 0% 50%;}
+            50% {background-position: 100% 50%;}
+            100% {background-position: 0% 50%;}
+        }
+        
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            background: rgba(0, 0, 0, 0.25);
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.15' fill-rule='evenodd'/%3E%3C/svg%3E");
+            position: relative;
+            z-index: 1;
+        }
+        
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, #FFD700, #FF8C00);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(3px 3px 5px rgba(0,0,0,0.5));
+            animation: fadeIn 2s ease-out;
+        }
+        
+        h2 {
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+            color: #FFE4B5;
+            text-shadow: 1px 1px 6px rgba(0,0,0,0.4);
+            font-weight: 600;
+        }
+        
+        .birthday-message {
+            max-width: 850px;
+            font-size: 1.3rem;
+            line-height: 1.9;
+            margin-bottom: 2.5rem;
+            background: rgba(0, 0, 0, 0.25);
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            animation: slideUp 1.5s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            0% {opacity: 0; transform: scale(0.9);}
+            100% {opacity: 1; transform: scale(1);}
+        }
+        
+        @keyframes slideUp {
+            0% {opacity: 0; transform: translateY(20px);}
+            100% {opacity: 1; transform: translateY(0);}
+        }
+        
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            max-width: 1100px;
+            margin: 0 auto 4rem;
+            padding: 0 1.5rem;
+        }
+        
+        .photo-container {
+            width: 100%;
+            max-width: 260px;
+            height: 260px;
+            perspective: 1200px;
+            margin: 0 auto;
+        }
+        
+        .photo {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            transform-style: preserve-3d;
+        }
+        
+        .photo-container:hover .photo {
+            transform: rotateY(180deg);
+        }
+        
+        .photo-front, .photo-back {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            backface-visibility: hidden;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 12px 35px rgba(0,0,0,0.5);
+        }
+        
+        .photo-front {
+            border: 4px solid rgba(255, 255, 255, 0.6);
+        }
+        
+        .photo-front img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+        
+        .photo-container:hover .photo-front img {
+            transform: scale(1.15);
+        }
+        
+        .photo-back {
+            background: linear-gradient(135deg, #7F9CF5, #B794F4);
+            transform: rotateY(180deg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 25px;
+            text-align: center;
+            color: #fff;
+            font-weight: 500;
+            font-size: 1.15rem;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+        }
+        
+        .memories {
+            padding: 5rem 2rem;
+            text-align: center;
+            background: rgba(107, 70, 193, 0.35);
+        }
+        
+        .memories h2 {
+            color: #FFE4B5;
+            margin-bottom: 3.5rem;
+            animation: fadeIn 1.5s ease-out;
+        }
+        
+        .video-container {
+            max-width: 900px;
+            margin: 3rem auto;
+        }
+        
+        .video-container h3 {
+            color: #FFE4B5;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            animation: fadeIn 1.5s ease-out;
+        }
+        
+        video {
+            width: 100%;
+            border-radius: 18px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+            border: 3px solid rgba(255, 255, 255, 0.25);
+            transition: transform 0.4s ease;
+        }
+        
+        video:hover {
+            transform: scale(1.02);
+        }
+        
+        .wishes {
+            padding: 5rem 2rem;
+            background: linear-gradient(45deg, rgba(107, 70, 193, 0.85), rgba(237, 100, 166, 0.85));
+            text-align: center;
+        }
+        
+        .wishes h2 {
+            margin-bottom: 3.5rem;
+            animation: fadeIn 1.5s ease-out;
+        }
+        
+        .wish-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            padding: 0 1.5rem;
+        }
+        
+        .wish-card {
+            background: rgba(255, 255, 255, 0.97);
+            padding: 30px;
+            border-radius: 18px;
+            color: #333;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border-bottom: 6px solid transparent;
+        }
+        
+        .wish-card:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 18px 40px rgba(0,0,0,0.35);
+            border-bottom: 6px solid #FFD700;
+        }
+        
+        .wish-card i {
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(45deg, #ED64A6, #FFD700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .wish-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 1.2rem;
+            color: #6B46C1;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 4rem 1.5rem;
+            background: rgba(0,0,0,0.75);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        footer::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='52' height='26' viewBox='0 0 52 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.08'%3E%3Cpath d='M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            z-index: -1;
+        }
+        
+        .heart {
+            color: #ED64A6;
+            animation: heartbeat 1.3s ease-in-out infinite;
+            font-size: 1.6rem;
+        }
+        
+        @keyframes heartbeat {
+            0%, 100% {transform: scale(1);}
+            50% {transform: scale(1.4);}
+        }
+        
+        .balloon {
+            position: fixed;
+            bottom: -120px;
+            width: 55px;
+            height: 70px;
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            animation: float 14s ease-in-out infinite;
+            box-shadow: inset -5px -5px 15px rgba(0,0,0,0.3);
+            z-index: 0;
+        }
+        
+        @keyframes float {
+            0% {transform: translateY(0) rotate(0deg);}
+            50% {transform: translateY(-110vh) rotate(15deg);}
+            100% {transform: translateY(-220vh) rotate(-15deg);}
+        }
+        
+        .music-controls {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: rgba(107, 70, 193, 0.85);
+            padding: 15px 20px;
+            border-radius: 50px;
+            backdrop-filter: blur(12px);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+        }
+        
+        .music-btn {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.6rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+        
+        .music-btn:hover {
+            transform: scale(1.15);
+            background: rgba(255, 255, 255, 0.25);
+        }
+        
+        #countdown {
+            font-size: 2.2rem;
+            margin-bottom: 2.5rem;
+            background: rgba(0, 0, 0, 0.35);
+            padding: 1.2rem 2.5rem;
+            border-radius: 50px;
+            color: #FFE4B5;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            animation: fadeIn 1.5s ease-out;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 3.5rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .birthday-message {
+                font-size: 1.1rem;
+                padding: 2rem;
+            }
+            
+            .photo-container {
+                max-width: 220px;
+                height: 220px;
+            }
+            
+            .photo-back {
+                font-size: 1rem;
+                padding: 20px;
+            }
+            
+            #countdown {
+                font-size: 1.7rem;
+                padding: 1rem 2rem;
+            }
+            
+            .wish-card {
+                padding: 20px;
+            }
+            
+            .wish-card i {
+                font-size: 2.5rem;
+            }
+            
+            .wish-card h3 {
+                font-size: 1.4rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2.8rem;
+            }
+            
+            .photo-gallery {
+                grid-template-columns: 1fr;
+            }
+            
+            .music-controls {
+                bottom: 15px;
+                right: 15px;
+                padding: 10px 15px;
+            }
+            
+            .music-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="music-controls">
+        <button class="music-btn" id="playBtn" title="Play/Pause Music">
+            <i class="fas fa-play"></i>
+        </button>
+        <button class="music-btn" id="volumeBtn" title="Adjust Volume">
+            <i class="fas fa-volume-up"></i>
+        </button>
+    </div>
+    
+    <header>
+        <h1>Happy Birthday Baa!</h1>
+        <h2>Dr. Kamalina Hazarika</h2>
+        <div id="countdown">
+            April 26, 2025
+        </div>
+        <div class="birthday-message">
+            Dear Baa, on this special day, I want to celebrate the amazing person you are. 
+            Your kindness, intelligence, and love have touched so many lives, especially mine. 
+            Thank you for always being there, for your guidance, and for all the wonderful memories we've shared.
+            May this new year of your life bring you joy, success, and endless blessings.
+        </div>
+    </header>
+    
+    <section class="memories">
+        <h2>Our Beautiful Memories</h2>
+        <div class="photo-gallery">
+            <div class="photo-container">
+                <div class="photo">
+                    <div class="photo-front">
+                        <img src="pic1.jpg" alt="Memory with Baa">
+                    </div>
+                    <div class="photo-back">
+                        <p>Our childhood - you've always been the best sister!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="photo-container">
+                <div class="photo">
+                    <div class="photo-front">
+                        <img src="pic.jpg" alt="Memory with Baa">
+                    </div>
+                    <div class="photo-back">
+                        <p>Your graduation day - so proud of Dr. Kamalina!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="photo-container">
+                <div class="photo">
+                    <div class="photo-front">
+                        <img src="pic2.jpg" alt="Memory with Baa">
+                    </div>
+                    <div class="photo-back">
+                        <p>Our Cute Little Dancer...</p>
+                    </div>
+                </div>
+            </div>
+            <div class="photo-container">
+                <div class="photo">
+                    <div class="photo-front">
+                        <img src="pic3.jpg" alt="Memory with Baa">
+                    </div>
+                    <div class="photo-back">
+                        <p>One with Maa & Deuta</p>
+                    </div>
+                </div>
+            </div>
+            <div class="photo-container">
+                <div class="photo">
+                    <div class="photo-front">
+                        <img src="pic4.jpg" alt="Memory with Baa">
+                    </div>
+                    <div class="photo-back">
+                        <p>25/11/24 - your big day</p>
+                    </div>
+                </div>
+            </div>
+            <div class="photo-container">
+                <div class="photo">
+                    <div class="photo-front">
+                        <img src="/api/placeholder/250/250" alt="Memory with Baa">
+                    </div>
+                    <div class="photo-back">
+                        <p>That dinner where you tried to cook and we ended up ordering pizza!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="video-container">
+            <h3>Special Video For You</h3>
+            <video controls width="500" height="400" poster="/api/placeholder/500/400">
+                <source src="baa-vdo.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </section>
+    
+    <section class="wishes">
+        <h2>Birthday Wishes For You</h2>
+        <div class="wish-container">
+            <div class="wish-card">
+                <i class="fas fa-star"></i>
+                <h3>Happiness</h3>
+                <p>May your heart be as light as a cloud, filled with happiness and laughter every day of your life.</p>
+            </div>
+            <div class="wish-card">
+                <i class="fas fa-heart"></i>
+                <h3>Love</h3>
+                <p>May your life continue to be filled with love, in all its forms, bringing warmth to your heart.</p>
+            </div>
+            <div class="wish-card">
+                <i class="fas fa-briefcase-medical"></i>
+                <h3>Success</h3>
+                <p>Dr. Kamalina, may your medical career continue to flourish and bring healing to many lives.</p>
+            </div>
+            <div class="wish-card">
+                <i class="fas fa-peace"></i>
+                <h3>Peace</h3>
+                <p>May you find tranquility and peace in every moment, even in the most challenging times.</p>
+            </div>
+            <div class="wish-card">
+                <i class="fas fa-award"></i>
+                <h3>Achievement</h3>
+                <p>May you continue to achieve all your dreams and goals with flying colors.</p>
+            </div>
+            <div class="wish-card">
+                <i class="fas fa-globe-asia"></i>
+                <h3>Adventure</h3>
+                <p>May this year bring exciting adventures and new experiences to enrich your life.</p>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <p>Made with <span class="heart">❤</span> for Baa</p>
+        <p>Happy Birthday 2025!</p>
+    </footer>
+
+    <audio id="bgMusic" loop>
+        <source src="tenu-sang-rakhna.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/confetti-js/0.0.18/index.min.js"></script>
+    <script>
+        // Confetti effect
+        function initializeConfetti() {
+            const confettiSettings = { 
+                target: 'confetti-canvas',
+                max: 250,
+                size: 1.8,
+                animate: true,
+                respawn: false,
+                props: ['circle', 'square', 'triangle'],
+                colors: [[255, 215, 0], [237, 100, 166], [107, 70, 193], [0, 191, 255], [255, 20, 147]],
+                clock: 30
+            };
+            
+            const canvas = document.createElement('canvas');
+            canvas.id = 'confetti-canvas';
+            canvas.style.position = 'fixed';
+            canvas.style.top = '0';
+            canvas.style.left = '0';
+            canvas.style.width = '100%';
+            canvas.style.height = '100%';
+            canvas.style.zIndex = '-1';
+            canvas.style.pointerEvents = 'none';
+            document.body.appendChild(canvas);
+            
+            const confetti = new ConfettiGenerator(confettiSettings);
+            confetti.render();
+            
+            setTimeout(() => confetti.clear(), 5000);
+        }
+        
+        // Floating balloons
+        function createBalloons() {
+            const colors = ['#ED64A6', '#6B46C1', '#FFD700', '#00BFFF', '#F687B3', '#B794F4'];
+            const totalBalloons = 12;
+            
+            for (let i = 0; i < totalBalloons; i++) {
+                const balloon = document.createElement('div');
+                balloon.classList.add('balloon');
+                balloon.style.left = `${Math.random() * 100}%`;
+                balloon.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                balloon.style.animationDelay = `${Math.random() * 8}s`;
+                balloon.style.animationDuration = `${12 + Math.random() * 4}s`;
+                document.body.appendChild(balloon);
+                
+                const string = document.createElement('div');
+                string.style.position = 'absolute';
+                string.style.width = '1px';
+                string.style.height = '60px';
+                string.style.backgroundColor = 'rgba(255,255,255,0.6)';
+                string.style.bottom = '-60px';
+                string.style.left = '50%';
+                string.style.transform = 'translateX(-50%)';
+                balloon.appendChild(string);
+                
+                balloon.addEventListener('animationend', () => balloon.remove());
+            }
+        }
+        
+        // Countdown timer
+        function updateCountdown() {
+            const birthday = new Date('April 26, 2025');
+            const now = new Date();
+            
+            if (now >= birthday) {
+                document.getElementById('countdown').innerHTML = "It's Your Birthday Today! 🎉";
+                return;
+            }
+            
+            const diff = birthday - now;
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+            
+            document.getElementById('countdown').innerHTML = 
+                `${days}d ${hours}h ${minutes}m ${seconds}s`;
+        }
+        
+        // Music controls
+        const music = document.getElementById('bgMusic');
+        const playBtn = document.getElementById('playBtn');
+        const volumeBtn = document.getElementById('volumeBtn');
+        let isPlaying = false;
+        let volume = 1;
+        
+        function togglePlay() {
+            if (isPlaying) {
+                music.pause();
+                playBtn.innerHTML = '<i class="fas fa-play"></i>';
+            } else {
+                music.play().catch(error => console.log("Playback error:", error));
+                playBtn.innerHTML = '<i class="fas fa-pause"></i>';
+            }
+            isPlaying = !isPlaying;
+        }
+        
+        function toggleVolume() {
+            if (volume > 0) {
+                volume = 0;
+                music.volume = 0;
+                volumeBtn.innerHTML = '<i class="fas fa-volume-mute"></i>';
+            } else {
+                volume = 1;
+                music.volume = 1;
+                volumeBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
+            }
+        }
+        
+        playBtn.addEventListener('click', togglePlay);
+        volumeBtn.addEventListener('click', toggleVolume);
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            initializeConfetti();
+            createBalloons();
+            setInterval(createBalloons, 12000);
+            setInterval(updateCountdown, 1000);
+            updateCountdown();
+            
+            // Attempt autoplay
+            music.play().then(() => {
+                isPlaying = true;
+                playBtn.innerHTML = '<i class="fas fa-pause"></i>';
+            }).catch(error => console.log("Autoplay prevented:", error));
+        });
+    </script>
+</body>
+</html>
